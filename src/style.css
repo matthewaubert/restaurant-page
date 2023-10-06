@@ -8,12 +8,14 @@
   --gap-250: 1.0rem;
   --gap-300: 1.2rem;
   --gap-400: 1.6rem;
+  --gap-500: 2.0rem;
   --gap-600: 2.4rem;
   --gap-700: 2.8rem;
   --gap-800: 3.2rem;
   --gap-1000: 4rem;
   --font-stack: "Helvetica", "Arial", sans-serif;
   font-family: var(--font-stack);
+  line-height: 1.25;
 }
 
 * {
@@ -27,24 +29,46 @@ html, body {
   height: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
-#content {
+body {
   background-image: url("leaves.png");
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 1fr;
-  justify-items: center;
-}
-
-header, main {
   background-color: var(--bg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--gap-300);
-  width: min(70%);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* content */
+
+#content {
+  background-color: var(--bg);
+  width: min(66.67%);
+}
+
+header, main {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: var(--gap-500);
+  padding: var(--gap-400);
+}
+
+main > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-200);
+}
+
+/* home */
+
+.review > p:last-child {
+  text-align: right;
+  margin-top: var(--gap-100);
 }

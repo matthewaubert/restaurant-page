@@ -1,3 +1,4 @@
-import { home } from './home.js';
+import { loadPage } from './load-page.js';
+import { renderHome } from './home.js';
 
-home();
+loadPage(renderHome());
