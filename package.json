@@ -4,7 +4,8 @@
   "description": "This project was built as part of The Odin Project: JavaScript course in order to practice what I've learned about JavaScript modules, npm, and webpack.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
