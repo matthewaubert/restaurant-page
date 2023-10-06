@@ -1,4 +1,4 @@
-import { createHeader, createDescription } from "./helpers";
+import { createHeader, createDescription } from './helpers';
 
 // render home tab
 function renderHome() {
@@ -10,6 +10,7 @@ function renderHome() {
   main.appendChild(createHours());
   main.appendChild(createReviews());
 
+  // return header and main for loadPage to add to page
   return [header, main];
 }
 
@@ -20,11 +21,13 @@ function createHours() {
     'Mon - Tue': 'Closed',
   };
 
+  // create container, add header to container
   const hoursContainer = document.createElement('div');
   const header = document.createElement('h2');
   header.innerText = "Hours";
   hoursContainer.appendChild(header);
 
+  // add hours text to container
   for (const key in hoursText) {
     const day = document.createElement('p');
     day.innerText = `${key}: ${hoursText[key]}`;
@@ -51,6 +54,7 @@ function createReviews() {
     }
   ];
 
+  // create a 'review' object for each obj in reviewContent; containing container, text, and author elements
   const reviews = [];
   reviewContent.forEach(revCont => {
     const review = {
@@ -63,6 +67,7 @@ function createReviews() {
     reviews.push(review);
   });
 
+  // create reviews container, add header
   const reviewsContainer = document.createElement('div');
   const header = document.createElement('h2');
   header.innerText = "Reviews";
@@ -75,7 +80,7 @@ function createReviews() {
     rev.container.classList.add('review');
     reviewsContainer.appendChild(rev.container);
 
-    // add line
+    // add line separation
     if (i < reviews.length - 1) reviewsContainer.appendChild(document.createElement('hr'));
   });
 

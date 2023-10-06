@@ -30,7 +30,7 @@ html, body {
 }
 
 body {
-  background-image: url("leaves.png");
+  background-image: url("assets/leaves.png");
   background-color: var(--bg);
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@ header, main {
 main > div {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-250);
+  gap: var(--gap-400);
 }
 
 /* home */
@@ -70,4 +70,23 @@ main > div {
 .review > p:last-child {
   text-align: right;
   margin-top: var(--gap-100);
+}
+
+/* menu */
+
+.meal {
+  display: flex;
+  gap: var(--gap-400);
+}
+
+.meal > img {
+  height: 33.33%;
+  width: 33.33%;
+  border-radius: 12px;
+}
+
+.meal > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-100);
 }
