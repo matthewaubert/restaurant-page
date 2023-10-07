@@ -1,4 +1,4 @@
-import { createHeader, createParagraph } from './helpers';
+import { createHeader, createParagraph, createImg } from './helpers';
 import Clock from './assets/clock.svg';
 import MapMarker from './assets/map-marker.svg';
 import Phone from './assets/phone.svg';
@@ -81,18 +81,13 @@ function createContactInfo(type) {
   const contactContainer = document.createElement('div');
   contactContainer.classList.add('contact-info');
 
-  const icon = document.createElement('img');
-  icon.src = info.img.src;
-  icon.alt = info.img.alt;
+  const icon = createImg(info.img.src, info.img.alt);
   contactContainer.appendChild(icon);
 
-  const textContainer = document.createElement('div');
-
   // add hours text to container
-  for (const key in info.text) {
-    const line = document.createElement('p');
-    line.innerText = info.text[key];
-    textContainer.appendChild(line);
+  const textContainer = document.createElement('div');
+  for (const key in info.text) {;
+    textContainer.appendChild(createParagraph(info.text[key]));
   }
 
   contactContainer.appendChild(textContainer);

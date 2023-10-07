@@ -1,4 +1,4 @@
-// create tab header
+// create tab header element
 function createHeader(text, level) {
   const title = document.createElement(`h${level}`);
   title.innerText = text;
@@ -6,7 +6,7 @@ function createHeader(text, level) {
   return title;
 }
 
-// create paragraph
+// create paragraph element
 function createParagraph(text) {
   const paragraph = document.createElement('p');
   paragraph.innerText = text;
@@ -14,6 +14,7 @@ function createParagraph(text) {
   return paragraph;
 }
 
+// create img element
 function createImg(srcText, altText) {
   const img = document.createElement('img');
   img.src = srcText;
@@ -22,6 +23,7 @@ function createImg(srcText, altText) {
   return img;
 }
 
+// assemble obj of HTML elements into container div
 function assemble(obj, className) {
   const container = document.createElement('div');
   if (className) container.classList.add(className);
