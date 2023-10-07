@@ -49,31 +49,20 @@ h1 {
 
 #content {
   background-color: var(--bg);
-  border-radius: 12px;
   width: min(44rem, 66.67%);
 }
 
 header, main {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-500);
+  gap: var(--gap-600);
   padding: var(--gap-400);
 }
 
 main > div {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-400);
-}
-
-.contact-info {
-  flex-direction: row;
-  gap: var(--gap-150);
-}
-
-.contact-info > img {
-  height: 20px;
-  width: 20px;
+  gap: var(--gap-300);
 }
 
 /* home */
@@ -81,6 +70,29 @@ main > div {
 .review > p:last-child {
   text-align: right;
   margin-top: var(--gap-100);
+}
+
+/* .about > div {
+  display: flex;
+  gap: var(--gap-400);
+  align-items: center;
+} */
+
+.about img {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--gap-300);
+}
+
+.about-info p {
+  grid-row: 1 / -1;
 }
 
 /* menu */
@@ -100,4 +112,17 @@ main > div {
   display: flex;
   flex-direction: column;
   gap: var(--gap-100);
+}
+
+/* contact */
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-150);
+}
+
+.contact-info > img {
+  height: 20px;
+  width: 20px;
 }

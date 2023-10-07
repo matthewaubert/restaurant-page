@@ -1,23 +1,36 @@
-import { createHeader, createParagraph, assemble } from './helpers';
+import { createHeader, createParagraph, createImg, assemble } from './helpers';
+import { createContactInfo } from './contact';
+import Cabin from './assets/cabin.jpg';
 
 // render home tab
 function renderHome() {
   const header = document.createElement('header');
   const main = document.createElement('main');
 
-  header.appendChild(createHeader("Munchie's Eats", 1));
-  main.appendChild(createParagraph("Munchie's Eats is a quaint little cafe tucked away in the trunk of the Great Oak in the Enchanted Forest, just off Rt 9."));
-  // main.appendChild(createAbout());
+  header.appendChild(createHeader("Munchy's Eats", 1));
+  // main.appendChild(createParagraph("Munchy's Eats is a quaint little cafe tucked away in the trunk of the Great Oak in the Enchanted Forest, just off Rt 9."));
+  main.appendChild(createAbout());
   main.appendChild(createReviews());
 
   // return header and main for loadPage to add to page
   return [header, main];
 }
 
-//create about content
-// function createAbout() {
+// create about content
+function createAbout() {
+  const header = createHeader("About", 2);
+
+  const img = createImg(Cabin, "A photo of Munchy's Eats");
+  // const content = assemble({img, text});
   
-// }
+  const text = createParagraph("Munchy's Eats is a quaint little cafe tucked away in the Enchanted Forest, off Rt 9, just past the Great Oak. It's the passion project of Munchy McSquirrel, however, Munchy couldn't do this alone. A family project through-and-through, Munchy receives so much help from the entire McSquirrel clan.");
+  const hours = createContactInfo("hours");
+  const location = createContactInfo("location");
+  const aboutInfo = assemble({text, hours, location}, 'about-info');
+
+  // return assemble({header, img, text, location, hours}, 'about');
+  return assemble({header, img, aboutInfo}, 'about');
+}
 
 // create review content
 function createReviews() {

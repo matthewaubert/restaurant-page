@@ -22,9 +22,9 @@ function renderMenu() {
 function createMenu() {
   const menuContent = [
     {
-      title: "Munchie's Mac and Cheese",
+      title: "Munchy's Mac and Cheese",
       cost: "$7.00",
-      description: "Munchie's signature mac and cheese, based on a recipe passed down by the McSquirrel family for generations.",
+      description: "Munchy's signature mac and cheese, based on a recipe passed down by the McSquirrel family for generations.",
       photo: MacNCheese
     },
     {
@@ -36,7 +36,7 @@ function createMenu() {
     {
       title: "Squirrel Monkey Bread",
       cost: "$8.00",
-      description: "Your favorite pull-apart sweet bread, created by none other than Munchie's second cousin once removed, Squirrel Monkey.",
+      description: "Your favorite pull-apart sweet bread, created by none other than Munchy's second cousin once removed, Squirrel Monkey.",
       photo: MonkeyBread
     },
     {

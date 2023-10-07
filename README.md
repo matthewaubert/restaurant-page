@@ -28,3 +28,6 @@ Photo by <a href="https://unsplash.com/@picoftasty?utm_content=creditCopyText&ut
 
 Monkey:
 Image by <a href="https://pixabay.com/users/sherzilla-34894442/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7888106">Sher singh</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7888106">Pixabay</a>
+
+Cabin:
+Image by <a href="https://pixabay.com/users/applespc-19095802/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7486209">ApplesPC</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7486209">Pixabay</a>

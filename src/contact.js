@@ -1,4 +1,4 @@
-import { createHeader, createParagraph, createImg } from './helpers';
+import { createHeader, createParagraph, createImg, assemble } from './helpers';
 import Clock from './assets/clock.svg';
 import MapMarker from './assets/map-marker.svg';
 import Phone from './assets/phone.svg';
@@ -10,7 +10,7 @@ function renderContact() {
   const main = document.createElement('main');
 
   header.appendChild(createHeader("Contact", 1));
-  main.appendChild(createParagraph("Come visit us during our regular hours - we'd love to see you here at Munchie's! And feel free to contact us via the phone number or email provided below."));
+  main.appendChild(createParagraph("Come visit us during our regular hours - we'd love to see you here at Munchy's! And feel free to contact us via the phone number or email provided below."));
   main.appendChild(createContactInfo("hours"));
   main.appendChild(createContactInfo("location"));
   main.appendChild(createContactInfo("phone"));
@@ -57,7 +57,7 @@ function createContactInfo(type) {
       alt: "email icon"
     },
     text: {
-      line1: "munchies@gmail.com"
+      line1: "Munchys@gmail.com"
     }
   }
   
@@ -77,24 +77,15 @@ function createContactInfo(type) {
       break;
   }
 
-  // create container, add header to container
-  const contactContainer = document.createElement('div');
-  contactContainer.classList.add('contact-info');
-
   const icon = createImg(info.img.src, info.img.alt);
-  contactContainer.appendChild(icon);
 
   // add hours text to container
   const textContainer = document.createElement('div');
-  for (const key in info.text) {;
+  for (const key in info.text) {
     textContainer.appendChild(createParagraph(info.text[key]));
   }
 
-  contactContainer.appendChild(textContainer);
-
-  return contactContainer;
+  return assemble({icon, textContainer}, 'contact-info');
 }
 
-
-
-export { renderContact };
+export { renderContact, createContactInfo };
