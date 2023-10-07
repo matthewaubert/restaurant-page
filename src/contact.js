@@ -1,4 +1,5 @@
 import { createHeader, createParagraph, createImg, assemble } from './helpers';
+import Munchy from './assets/munchy.jpg';
 import Clock from './assets/clock.svg';
 import MapMarker from './assets/map-marker.svg';
 import Phone from './assets/phone.svg';
@@ -11,13 +12,22 @@ function renderContact() {
 
   header.appendChild(createHeader("Contact", 1));
   main.appendChild(createParagraph("Come visit us during our regular hours - we'd love to see you here at Munchy's! And feel free to contact us via the phone number or email provided below."));
-  main.appendChild(createContactInfo("hours"));
-  main.appendChild(createContactInfo("location"));
-  main.appendChild(createContactInfo("phone"));
-  main.appendChild(createContactInfo("email"));
-
+  main.appendChild(createContactBlock());
   // return header and main for loadPage to add to page
   return [ header, main ];
+}
+
+function createContactBlock() {
+  // create an obj of meal text for each obj in menuContent
+  const contactInfo =  {
+    photo: createImg(Munchy, "A photo of Munchy"),
+    hours: createContactInfo("hours"),
+    location: createContactInfo("location"),
+    phone: createContactInfo("phone"),
+    email: createContactInfo("email")
+  };
+
+  return assemble(contactInfo, 'contact-block');
 }
 
 // create hours content

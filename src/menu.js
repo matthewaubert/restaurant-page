@@ -77,12 +77,10 @@ function createMenu() {
 
   // create menu container, add header
   const menuContainer = document.createElement('div');
-  menuContainer.appendChild(createHeader("Menu", 2));
 
   // assemble menu items and add to container
   meals.forEach((meal, i) => {
-    const container = assemble(meal, 'meal');
-    menuContainer.appendChild(container);
+    menuContainer.appendChild(assemble(meal, 'meal'));
 
     // add line separation
     if (i < meals.length - 1) menuContainer.appendChild(document.createElement('hr'));
