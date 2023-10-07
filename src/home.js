@@ -1,17 +1,23 @@
-import { createHeader, createDescription } from './helpers';
+import { createHeader, createParagraph, assemble } from './helpers';
 
 // render home tab
 function renderHome() {
   const header = document.createElement('header');
   const main = document.createElement('main');
 
-  header.appendChild(createHeader("Munchie's Eats"));
-  main.appendChild(createDescription("Munchie's Eats is a quaint little cafe tucked away in the trunk of the Great Oak in the Enchanted Forest, just off Rt 9."));
+  header.appendChild(createHeader("Munchie's Eats", 1));
+  main.appendChild(createParagraph("Munchie's Eats is a quaint little cafe tucked away in the trunk of the Great Oak in the Enchanted Forest, just off Rt 9."));
+  // main.appendChild(createAbout());
   main.appendChild(createReviews());
 
   // return header and main for loadPage to add to page
   return [header, main];
 }
+
+//create about content
+// function createAbout() {
+  
+// }
 
 // create review content
 function createReviews() {
@@ -34,27 +40,20 @@ function createReviews() {
   const reviews = [];
   reviewContent.forEach(revCont => {
     const review = {
-      container: document.createElement('div'),
-      text: document.createElement('p'),
-      author: document.createElement('p')
+      text: createParagraph(revCont.text),
+      author: createParagraph(revCont.author)
     };
-    review.text.innerText = revCont.text;
-    review.author.innerText = revCont.author;
     reviews.push(review);
   });
 
   // create reviews container, add header
   const reviewsContainer = document.createElement('div');
-  const header = document.createElement('h2');
-  header.innerText = "Reviews";
-  reviewsContainer.appendChild(header);
+  reviewsContainer.appendChild(createHeader("Reviews", 2));
   
   // assemble reviews and add to container
   reviews.forEach((rev, i) => {
-    rev.container.appendChild(rev.text);
-    rev.container.appendChild(rev.author);
-    rev.container.classList.add('review');
-    reviewsContainer.appendChild(rev.container);
+    const container = assemble(rev, 'review');
+    reviewsContainer.appendChild(container);
 
     // add line separation
     if (i < reviews.length - 1) reviewsContainer.appendChild(document.createElement('hr'));

@@ -1,4 +1,4 @@
-import { createHeader, createDescription } from './helpers';
+import { createHeader, createParagraph, createImg, assemble } from './helpers';
 import MacNCheese from './assets/mac-n-cheese.jpg';
 import Cookies from './assets/cookies.jpg';
 import MonkeyBread from './assets/monkey-bread.jpg';
@@ -10,8 +10,8 @@ function renderMenu() {
   const header = document.createElement('header');
   const main = document.createElement('main');
 
-  header.appendChild(createHeader("Menu"));
-  main.appendChild(createDescription("All of the dishes in our menu are incredibly delicious and hand-crafted from only nature's finest ingredients."));
+  header.appendChild(createHeader("Menu", 1));
+  main.appendChild(createParagraph("All of the dishes in our menu are incredibly delicious and hand-crafted from only nature's finest ingredients."));
   main.appendChild(createMenu());
 
   // return header and main for loadPage to add to page
@@ -53,41 +53,36 @@ function createMenu() {
     },
   ];
 
-  // create a menu object for each obj in menuContent
-  const meals = [];
+  // create an obj of meal text for each obj in menuContent
+  const mealText = [];
   menuContent.forEach(menuCont => {
     const meal = {
-      container: document.createElement('div'),
-      textContainer: document.createElement('div'),
       title: document.createElement('h3'),
       cost: document.createElement('span'),
-      description: document.createElement('p'),
-      photo: document.createElement('img')
-    };
+      description: createParagraph(menuCont.description),
+    }
     meal.title.innerText = menuCont.title;
     meal.cost.innerText = menuCont.cost;
-    meal.description.innerText = menuCont.description;
-    meal.photo.src = menuCont.photo;
-    meal.photo.alt = menuCont.title;
-    meals.push(meal);
+    mealText.push(meal);
+  });
+
+  // create a menu object of text and photo for each obj in menuContent
+  const meals = [];
+  menuContent.forEach((menuCont, i) => {
+    meals.push({
+      textContainer: assemble(mealText[i]),
+      photo: createImg(menuCont.photo, menuCont.title),
+    });
   });
 
   // create menu container, add header
   const menuContainer = document.createElement('div');
-  const header = document.createElement('h2');
-  header.innerText = "Menu";
-  menuContainer.appendChild(header);
+  menuContainer.appendChild(createHeader("Menu", 2));
 
   // assemble menu items and add to container
   meals.forEach((meal, i) => {
-    meal.textContainer.appendChild(meal.title);
-    meal.textContainer.appendChild(meal.cost);
-    meal.textContainer.appendChild(meal.description);
-
-    meal.container.appendChild(meal.photo);
-    meal.container.appendChild(meal.textContainer);
-    meal.container.classList.add('meal');
-    menuContainer.appendChild(meal.container);
+    const container = assemble(meal, 'meal');
+    menuContainer.appendChild(container);
 
     // add line separation
     if (i < meals.length - 1) menuContainer.appendChild(document.createElement('hr'));

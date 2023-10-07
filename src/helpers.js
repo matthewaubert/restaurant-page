@@ -1,17 +1,36 @@
 // create tab header
-function createHeader(text) {
-  const title = document.createElement('h1');
+function createHeader(text, level) {
+  const title = document.createElement(`h${level}`);
   title.innerText = text;
 
   return title;
 }
 
-// create tab description
-function createDescription(text) {
-  const description = document.createElement('p');
-  description.innerText = text;
+// create paragraph
+function createParagraph(text) {
+  const paragraph = document.createElement('p');
+  paragraph.innerText = text;
   
-  return description;
+  return paragraph;
 }
 
-export { createHeader, createDescription };
+function createImg(srcText, altText) {
+  const img = document.createElement('img');
+  img.src = srcText;
+  img.alt = altText;
+
+  return img;
+}
+
+function assemble(obj, className) {
+  const container = document.createElement('div');
+  if (className) container.classList.add(className);
+
+  for (const key in obj) {
+    container.appendChild(obj[key]);
+  }
+
+  return container;
+}
+
+export { createHeader, createParagraph, createImg, assemble };

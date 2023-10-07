@@ -1,4 +1,4 @@
-import { createHeader, createDescription } from './helpers';
+import { createHeader, createParagraph } from './helpers';
 import Clock from './assets/clock.svg';
 import MapMarker from './assets/map-marker.svg';
 import Phone from './assets/phone.svg';
@@ -9,8 +9,8 @@ function renderContact() {
   const header = document.createElement('header');
   const main = document.createElement('main');
 
-  header.appendChild(createHeader("Contact"));
-  main.appendChild(createDescription("Come visit us during our regular hours - we'd love to see you here at Munchie's! And feel free to contact us via the phone number or email provided below."));
+  header.appendChild(createHeader("Contact", 1));
+  main.appendChild(createParagraph("Come visit us during our regular hours - we'd love to see you here at Munchie's! And feel free to contact us via the phone number or email provided below."));
   main.appendChild(createContactInfo("hours"));
   main.appendChild(createContactInfo("location"));
   main.appendChild(createContactInfo("phone"));
