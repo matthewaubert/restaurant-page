@@ -5,13 +5,13 @@ import MonkeyBread from './assets/monkey-bread.jpg';
 import Brownie from './assets/brownie.jpg';
 import MushroomSoup from './assets/mushroom-soup.jpg';
 
-// render home tab
+// render menu tab
 function renderMenu() {
   const header = document.createElement('header');
   const main = document.createElement('main');
 
   header.appendChild(createHeader("Menu"));
-  main.appendChild(createDescription("All of the dishes in our menu are incredibly delicious and hand-crafted from only nature's finest elements."));
+  main.appendChild(createDescription("All of the dishes in our menu are incredibly delicious and hand-crafted from only nature's finest ingredients."));
   main.appendChild(createMenu());
 
   // return header and main for loadPage to add to page
@@ -36,7 +36,7 @@ function createMenu() {
     {
       title: "Squirrel Monkey Bread",
       cost: "$8.00",
-      description: "Your favorite pull-apart sweet bread, hand-crafted by none other than Munchie's second cousin once removed, Squirrel Monkey.",
+      description: "Your favorite pull-apart sweet bread, created by none other than Munchie's second cousin once removed, Squirrel Monkey.",
       photo: MonkeyBread
     },
     {

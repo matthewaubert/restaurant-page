@@ -6,35 +6,11 @@ function renderHome() {
   const main = document.createElement('main');
 
   header.appendChild(createHeader("Munchie's Eats"));
-  main.appendChild(createDescription("Munchie's Eats is a quaint little cafe tucked away in the trunk of the Great Oak in the Enchanted Forest, just off Rt 112."));
-  main.appendChild(createHours());
+  main.appendChild(createDescription("Munchie's Eats is a quaint little cafe tucked away in the trunk of the Great Oak in the Enchanted Forest, just off Rt 9."));
   main.appendChild(createReviews());
 
   // return header and main for loadPage to add to page
   return [header, main];
-}
-
-// create hours content
-function createHours() {
-  const hoursText = {
-    'Wed - Sun': '8am - 3pm',
-    'Mon - Tue': 'Closed',
-  };
-
-  // create container, add header to container
-  const hoursContainer = document.createElement('div');
-  const header = document.createElement('h2');
-  header.innerText = "Hours";
-  hoursContainer.appendChild(header);
-
-  // add hours text to container
-  for (const key in hoursText) {
-    const day = document.createElement('p');
-    day.innerText = `${key}: ${hoursText[key]}`;
-    hoursContainer.appendChild(day);
-  }
-
-  return hoursContainer;
 }
 
 // create review content
