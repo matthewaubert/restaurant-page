@@ -7,14 +7,12 @@ import Email from './assets/email.svg';
 
 // render contact tab
 function renderContact() {
-  const header = document.createElement('header');
   const main = document.createElement('main');
 
-  header.appendChild(createHeader("Contact", 1));
   main.appendChild(createParagraph("Come visit us during our regular hours - we'd love to see you here at Munchy's! And feel free to contact us via the phone number or email provided below."));
   main.appendChild(createContactBlock());
-  // return header and main for loadPage to add to page
-  return [ header, main ];
+
+  return main;
 }
 
 function createContactBlock() {

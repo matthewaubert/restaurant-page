@@ -45,6 +45,11 @@ h1 {
   text-align: center;
 }
 
+li {
+  list-style-type: none;
+}
+
+
 /* content */
 
 #content {
@@ -64,6 +69,35 @@ main > div {
   flex-direction: column;
   gap: var(--gap-300);
 }
+
+
+/* nav */
+
+nav {
+  display: grid;
+  place-content: center;
+}
+
+#nav {
+  display: flex;
+  gap: var(--gap-300);
+}
+
+#nav li {
+  display: grid;
+  place-content: center;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right:  1px solid black;
+  border-radius: 12px 12px 0 0;
+  width: 6rem;
+  height: 3rem;
+}
+
+#nav li:hover {
+  cursor: pointer;
+}
+
 
 /* home */
 
@@ -113,6 +147,7 @@ main > div {
   flex-direction: column;
   gap: var(--gap-100);
 }
+
 
 /* contact */
 

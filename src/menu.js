@@ -7,15 +7,12 @@ import MushroomSoup from './assets/mushroom-soup.jpg';
 
 // render menu tab
 function renderMenu() {
-  const header = document.createElement('header');
   const main = document.createElement('main');
 
-  header.appendChild(createHeader("Menu", 1));
   main.appendChild(createParagraph("All of the dishes in our menu are incredibly delicious and hand-crafted from only nature's finest ingredients."));
   main.appendChild(createMenu());
 
-  // return header and main for loadPage to add to page
-  return [ header, main ];
+  return main;
 }
 
 // create menu content
@@ -57,11 +54,10 @@ function createMenu() {
   const mealText = [];
   menuContent.forEach(menuCont => {
     const meal = {
-      title: document.createElement('h3'),
+      title: createHeader(menuCont.title, 3),
       cost: document.createElement('span'),
       description: createParagraph(menuCont.description),
     }
-    meal.title.innerText = menuCont.title;
     meal.cost.innerText = menuCont.cost;
     mealText.push(meal);
   });
