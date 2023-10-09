@@ -12,6 +12,9 @@
   --neutral-200: #e5e5e5;
   --neutral-300: #d4d4d4;
   --neutral-400: #a3a3a3;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
   --gap-100: 0.4rem;
   --gap-150: 0.6rem;
   --gap-200: 0.8rem;
@@ -25,6 +28,7 @@
   --gap-1000: 4rem;
   --font-stack: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-family: var(--font-stack);
+  color: var(--neutral-800);
   line-height: 1.25;
 }
 
@@ -40,7 +44,6 @@ html, body {
 }
 
 body {
-  /* background-image: url("assets/leaves.png"); */
   background-color: var(--bg);
   display: flex;
   flex-direction: column;
@@ -49,7 +52,7 @@ body {
 }
 
 body::before {
-  background-image: url("assets/leaves.png");
+  background-image: url("./assets/leaves.png");
   content: " ";
   background-size: cover;
   position: absolute;
@@ -65,6 +68,9 @@ a {
 }
 
 h1 {
+  background-color: var(--bg);
+  box-shadow: 0 0 12px 12px var(--bg);
+  color: var(--neutral-700);
   font-family: 'Rampart One', var(--font-stack);
   font-size: 3rem;
   text-align: center;
@@ -79,11 +85,13 @@ h4 {
   font-weight: bold;
 }
 
-p, li {
+p {
   font-size: 1.1rem;
 }
 
 li {
+  font-weight: 500;
+  font-size: 1.1rem;
   list-style-type: none;
 }
 
@@ -99,16 +107,16 @@ li {
 
 header, main {
   display: flex;
-  flex-direction: column;
-  gap: var(--gap-600);
+  gap: var(--gap-400);
   padding: var(--gap-400);
 }
 
-/* header, nav {
-  background-color: rgb(242, 242, 242, 0.5);
-} */
+header {
+  justify-content: center;
+}
 
 main {
+  flex-direction: column;
   background-color: var(--bg);
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
   border-radius: 16px;
@@ -158,6 +166,7 @@ nav {
 
 #nav li:hover {
   cursor: pointer;
+  background-color: var(--bg);
 }
 
 
@@ -167,12 +176,6 @@ nav {
   text-align: right;
   margin-top: var(--gap-100);
 }
-
-/* .about > div {
-  display: flex;
-  gap: var(--gap-400);
-  align-items: center;
-} */
 
 .about img {
   height: 100%;

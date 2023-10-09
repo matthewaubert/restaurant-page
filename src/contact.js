@@ -37,7 +37,7 @@ function createContactInfo(type) {
     },
     text: {
       line1: 'Wed - Sun: 8am - 3pm',
-      line2: 'Mon - Tue: Closed',
+      line2: 'Mon - Tue: closed',
     }
   };
   const location = {
@@ -65,7 +65,7 @@ function createContactInfo(type) {
       alt: "email icon"
     },
     text: {
-      line1: "Munchys@gmail.com"
+      line1: "munchys@gmail.com"
     }
   }
   
