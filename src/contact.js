@@ -17,15 +17,16 @@ function renderContact() {
 
 function createContactBlock() {
   // create an obj of meal text for each obj in menuContent
+  const photo = createImg(Munchy, "A photo of Munchy");
   const contactInfo =  {
-    photo: createImg(Munchy, "A photo of Munchy"),
     hours: createContactInfo("hours"),
     location: createContactInfo("location"),
     phone: createContactInfo("phone"),
     email: createContactInfo("email")
   };
+  const assembledContactInfo = assemble(contactInfo);
 
-  return assemble(contactInfo, 'contact-block');
+  return assemble({photo, assembledContactInfo}, 'contact-block');
 }
 
 // create hours content

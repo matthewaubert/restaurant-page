@@ -30,7 +30,7 @@ function createAbout() {
 function createReviews() {
   const reviewContent = [
     {
-      text: "Um, freaking delicious! We just moved to the area and wow what a breakfast this was. There are so many options, too. Definitely scurry on by to check this place out.",
+      text: "Um, freaking delicious! We just moved to the area and wow what a breakfast this was. There are so many options. Definitely scurry on by to check this place out.",
       author: "~ Scrat"
     },
     {
@@ -38,7 +38,7 @@ function createReviews() {
       author: "~ Nibbles"
     },
     {
-      text: "Sure, it's a quaint little cafe. I do think the portions of food are on the small side, though...",
+      text: "Sure, it's a quaint little cafe. I do think the portions of food are somewhat on the small side, though...",
       author: "~ Squeaky"
     }
   ];
