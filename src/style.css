@@ -11,21 +11,12 @@
   --bg: #f2f2f2;
   --neutral-200: #e5e5e5;
   --neutral-300: #d4d4d4;
-  --neutral-400: #a3a3a3;
   --neutral-700: #404040;
   --neutral-800: #262626;
-  --neutral-900: #171717;
   --gap-100: 0.4rem;
   --gap-150: 0.6rem;
-  --gap-200: 0.8rem;
-  --gap-250: 1.0rem;
   --gap-300: 1.2rem;
   --gap-400: 1.6rem;
-  --gap-500: 2.0rem;
-  --gap-600: 2.4rem;
-  --gap-700: 2.8rem;
-  --gap-800: 3.2rem;
-  --gap-1000: 4rem;
   --font-stack: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-family: var(--font-stack);
   color: var(--neutral-800);
@@ -40,7 +31,7 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -53,8 +44,8 @@ body {
 
 body::before {
   background-image: url("./assets/leaves.png");
-  content: " ";
-  background-size: cover;
+  background-repeat: repeat;
+  content: "";
   position: absolute;
   top: 0px;
   right: 0px;
@@ -70,7 +61,7 @@ a {
 h1 {
   background-color: var(--bg);
   border-radius: 24px;
-  box-shadow: 0 0 12px 12px var(--bg);
+  box-shadow: 0 0 18px 24px var(--bg);
   color: var(--neutral-700);
   font-family: 'Rampart One', var(--font-stack);
   /* font-size: 3rem; */

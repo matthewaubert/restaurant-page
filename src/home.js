@@ -38,7 +38,7 @@ function createReviews() {
       author: "~ Nibbles"
     },
     {
-      text: "Sure, it's a quaint little cafe. I do think the portions of food are somewhat on the small side, though...",
+      text: "Sure, it's a quaint little cafe. But it's out in the middle of nowhere and the portions of food are somewhat on the small side.",
       author: "~ Squeaky"
     }
   ];
