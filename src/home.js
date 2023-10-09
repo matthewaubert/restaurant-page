@@ -14,8 +14,6 @@ function renderHome() {
 
 // create about content
 function createAbout() {
-  // const header = createHeader("About", 2);
-
   const img = createImg(Cabin, "A photo of Munchy's Eats");
   
   const text = createParagraph("Munchy's Eats is a quaint little cafe tucked away in the Enchanted Forest, off Rt 9, just past the Great Oak. It's the passion project of Munchy McSquirrel, however, Munchy couldn't do this alone. A family project through-and-through, Munchy receives so much help from the entire McSquirrel clan.");
@@ -30,7 +28,7 @@ function createAbout() {
 function createReviews() {
   const reviewContent = [
     {
-      text: "Um, freaking delicious! We just moved to the area and wow what a breakfast this was. There are so many options. Definitely scurry on by to check this place out.",
+      text: "Um, freaking delicious! We just moved to the area and wow what a breakfast this was. Just incredible. There are so many options. Definitely scurry on by to check this place out.",
       author: "~ Scrat"
     },
     {
@@ -38,7 +36,7 @@ function createReviews() {
       author: "~ Nibbles"
     },
     {
-      text: "Sure, it's a quaint little cafe. But it's out in the middle of nowhere and the portions of food are somewhat on the small side.",
+      text: "Sure, it's a quaint little cafe. But it's out in the middle of nowhere and the portions of food are on the small side.",
       author: "~ Squeaky"
     }
   ];

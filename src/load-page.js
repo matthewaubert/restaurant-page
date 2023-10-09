@@ -1,9 +1,11 @@
 import { createHeader } from "./helpers";
 
+// initial page load
 function loadPage(renderPage) {
   return [renderHeader(), renderNav(), renderPage()];
 }
 
+// render "Munchie's Eats" header
 function renderHeader() {
   const header = document.createElement('header');
   header.appendChild(createHeader("Munchy's Eats", 1));
@@ -11,6 +13,7 @@ function renderHeader() {
   return header;
 }
 
+// render navigation tabs
 function renderNav() {
   const nav = document.createElement('nav');
 

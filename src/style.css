@@ -64,7 +64,6 @@ h1 {
   box-shadow: 0 0 18px 24px var(--bg);
   color: var(--neutral-700);
   font-family: 'Rampart One', var(--font-stack);
-  /* font-size: 3rem; */
   font-size: calc(2.0rem + 2vw);
   text-align: center;
 }
@@ -79,7 +78,6 @@ h4 {
 }
 
 p, li {
-  /* font-size: 1.1rem; */
   font-size: calc(0.9rem + 0.25vw);
 }
 
@@ -92,7 +90,6 @@ li {
 /* content */
 
 #content {
-  /* background-color: var(--bg); */
   width: min(42rem, 80%);
   position: relative;
   z-index: 1;
@@ -206,16 +203,12 @@ nav {
 /* contact */
 
 .contact-block {
-  /* display: grid; */
-  /* grid-template-columns: 2fr 3fr; */
-  /* grid-template-rows: repeat(4, 1fr); */
   display: flex;
   flex-direction: row;
 }
 
 .contact-block > img {
   border-radius: 12px;
-  /* grid-row: 1 / -1; */
   height: 40%;
   width: 40%
 }
