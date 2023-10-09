@@ -19,12 +19,14 @@ function renderNav() {
   ul.setAttribute('id', 'nav');
   const tabText = ['Home', 'Menu', 'Contact'];
 
-  for (let i = 0; i < 3; i++) {
+  tabText.forEach(tab => {
     const li = document.createElement('li');
-    li.innerText = tabText[i];
+    li.innerText = tab;
+    if (tab === 'Home') li.classList.add('selected');
+
     ul.appendChild(li);
-  }
-  nav.appendChild(ul)
+  });
+  nav.appendChild(ul);
 
   return nav;
 }

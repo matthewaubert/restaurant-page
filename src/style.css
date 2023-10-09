@@ -1,7 +1,17 @@
+/* Rampart One */
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
 /* general */
 
 :root {
   --bg: #f2f2f2;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
   --gap-100: 0.4rem;
   --gap-150: 0.6rem;
   --gap-200: 0.8rem;
@@ -13,7 +23,7 @@
   --gap-700: 2.8rem;
   --gap-800: 3.2rem;
   --gap-1000: 4rem;
-  --font-stack: "Helvetica", "Arial", sans-serif;
+  --font-stack: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-family: var(--font-stack);
   line-height: 1.25;
 }
@@ -30,11 +40,24 @@ html, body {
 }
 
 body {
-  background-image: url("assets/leaves.png");
+  /* background-image: url("assets/leaves.png"); */
   background-color: var(--bg);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+body::before {
+  background-image: url("assets/leaves.png");
+  content: " ";
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
 }
 
 a {
@@ -42,7 +65,22 @@ a {
 }
 
 h1 {
+  font-family: 'Rampart One', var(--font-stack);
+  font-size: 3rem;
   text-align: center;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+p, li {
+  font-size: 1.1rem;
 }
 
 li {
@@ -53,8 +91,10 @@ li {
 /* content */
 
 #content {
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   width: min(44rem, 66.67%);
+  position: relative;
+  z-index: 1;
 }
 
 header, main {
@@ -62,6 +102,16 @@ header, main {
   flex-direction: column;
   gap: var(--gap-600);
   padding: var(--gap-400);
+}
+
+/* header, nav {
+  background-color: rgb(242, 242, 242, 0.5);
+} */
+
+main {
+  background-color: var(--bg);
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  border-radius: 16px;
 }
 
 main > div {
@@ -76,22 +126,34 @@ main > div {
 nav {
   display: grid;
   place-content: center;
+  /* position: relative; */
+  /* z-index: 1; */
 }
 
 #nav {
   display: flex;
   gap: var(--gap-300);
+  /* margin-bottom: var(--gap-300); */
 }
 
 #nav li {
   display: grid;
   place-content: center;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right:  1px solid black;
-  border-radius: 12px 12px 0 0;
-  width: 6rem;
+  /* border-bottom: 4px solid transparent; */
+  border-radius: 16px 16px 0 0;
+  width: 6.4rem;
   height: 3rem;
+  background-color: var(--neutral-200);
+  border: 1px solid var(--neutral-300);
+}
+
+#nav .selected {
+  background-color: var(--bg);
+  border-bottom: none;
+  border-top: 1px solid var(--neutral-300);
+  border-right: 1px solid var(--neutral-300);
+  border-left: 1px solid var(--neutral-300);
+  box-shadow: 0 -6px 8px rgba(0,0,0,0.1);
 }
 
 #nav li:hover {

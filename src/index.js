@@ -20,6 +20,10 @@ tabs.forEach(tab => tab.addEventListener('click', switchTab));
 function switchTab(e) {
   main.remove();
 
+  // add bottom border to target el and remove others
+  tabs.forEach(tab => tab.classList.remove('selected'));
+  e.target.classList.add('selected');
+
   // obj to relate tab text content to correct page loader func
   const tabLoaders = {
     'Home': renderHome,
